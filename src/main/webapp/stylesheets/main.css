@@ -114,7 +114,7 @@ body {
 .result a:focus .result__container,
 .result a:hover .result__container,
 .result a:active .result__container {
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff;
 }
 
 @media only screen and (min-width: 40em) {
