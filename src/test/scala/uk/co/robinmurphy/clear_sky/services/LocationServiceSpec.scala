@@ -30,12 +30,12 @@ class LocationServiceSpec extends FunSpec with Matchers with ScalaFutures with B
     describe(".findById") {
       it("returns a location") {
         mockXmlRequestWithFixture("location.xml")
-        val location = locationService.findById("2643743")
+        val locationRequest = locationService.findById("2643743")
 
-        whenReady(location, timeout(5.seconds)) { loc =>
-          loc.name should be ("London")
-          loc.container should be ("Greater London")
-          loc.id should be ("2643743")
+        whenReady(locationRequest, timeout(5.seconds)) { location =>
+          location.name should be ("London")
+          location.container should be ("Greater London")
+          location.id should be ("2643743")
         }
       }
     }
@@ -43,13 +43,13 @@ class LocationServiceSpec extends FunSpec with Matchers with ScalaFutures with B
     describe(".find") {
       it("returns a list of location models") {
         mockXmlRequestWithFixture("locations.xml")
-        val locations = locationService.find("London")
+        val locationsRequest = locationService.find("London")
 
-        whenReady(locations, timeout(5.seconds)) { locs =>
-          locs.size should be (5)
-          locs(0).name should be ("London")
-          locs(0).container should be ("Canada")
-          locs(0).id should be ("6058560")
+        whenReady(locationsRequest, timeout(5.seconds)) { locations =>
+          locations.size should be (5)
+          locations(0).name should be ("London")
+          locations(0).container should be ("Canada")
+          locations(0).id should be ("6058560")
         }
       }
     }

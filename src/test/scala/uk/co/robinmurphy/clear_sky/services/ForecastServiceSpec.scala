@@ -32,13 +32,13 @@ class ForecastServiceSpec extends FunSpec with Matchers with ScalaFutures with M
     describe(".findById") {
       it("returns a forecast model") {
         mockJsonRequestWithFixture("forecast.json")
-        val forecast = forecastService.findById("2643743")
+        val forecastRequest = forecastService.findById("2643743")
 
-        whenReady(forecast, timeout(5.seconds)) { _forecast =>
-          _forecast.temperature should equal(7)
-          _forecast.weatherType should equal("Clear Sky")
-          _forecast.windSpeed should equal(4)
-          _forecast.windDirection should equal("Westerly")
+        whenReady(forecastRequest, timeout(5.seconds)) { forecast =>
+          forecast.temperature should equal(7)
+          forecast.weatherType should equal("Clear Sky")
+          forecast.windSpeed should equal(4)
+          forecast.windDirection should equal("Westerly")
         }
       }
     }
