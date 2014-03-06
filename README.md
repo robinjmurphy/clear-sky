@@ -25,6 +25,13 @@ If `browse` doesn't launch your browser, manually open [http://localhost:8080/](
 Tests are written using [ScalaTest](http://www.scalatest.org/).
 
 ```
-./sbt
-> test
+./sbt test
+```
+
+## Package
+
+To package the application into a WAR archive:
+
+```
+./sbt package
 ```
