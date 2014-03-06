@@ -1,6 +1,6 @@
 # Clear Sky 
 
-[![Build Status](https://travis-ci.org/robinjmurphy/clear-sky.png?branch=master)](https://travis-ci.org/robinjmurphy/clear-sky)
+[![Build Status](https://magnum.travis-ci.com/robinjmurphy/clear-sky.png?token=WUF7xk1NvNeWv7U6PqBg&branch=master)](https://magnum.travis-ci.com/robinjmurphy/clear-sky)
 
 It tells you the weather.
 
