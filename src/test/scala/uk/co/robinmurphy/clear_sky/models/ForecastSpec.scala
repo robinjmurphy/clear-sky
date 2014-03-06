@@ -3,7 +3,6 @@ package uk.co.robinmurphy.clear_sky.models
 import org.scalatest._
 
 class ForecastSpec extends FunSpec with Matchers with BeforeAndAfter {
-
   var forecast: Forecast = _
 
   before {

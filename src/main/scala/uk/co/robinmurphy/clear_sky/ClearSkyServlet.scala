@@ -87,6 +87,7 @@ class ClearSkyServlet(system: ActorSystem) extends ClearSkyStack {
   error {
     case e =>
       status = 500
+
       mustache(
         "error",
         "error" -> e.getMessage
