@@ -2,14 +2,14 @@ package uk.co.robinmurphy.clear_sky
 
 import uk.co.robinmurphy.clear_sky.services.{ForecastService, LocationService}
 import scala.concurrent._
-import ExecutionContext.Implicits.global
 import org.scalatra.AsyncResult
-import duration._
-import scala.util._
+import akka.actor.ActorSystem
 
-class ClearSkyServlet extends ClearSkyStack {
+class ClearSkyServlet(system: ActorSystem) extends ClearSkyStack {
   val locationService = new LocationService()
   val forecastService = new ForecastService()
+
+  override protected implicit def executor: ExecutionContext = system.dispatcher
 
   get("/") {
     contentType = "text/html"
@@ -29,14 +29,16 @@ class ClearSkyServlet extends ClearSkyStack {
     val query = params.getOrElse("query", "")
     val locationsRequest = locationService.find(query)
 
-    locationsRequest map { locations =>
-      mustache(
-        "index",
-        "query" -> query,
-        "results" -> locations,
-        "hasResults" -> locations.nonEmpty,
-        "noResults" -> locations.isEmpty
-      )
+    new AsyncResult { val is =
+      locationsRequest map { locations =>
+        mustache(
+          "index",
+          "query" -> query,
+          "results" -> locations,
+          "hasResults" -> locations.nonEmpty,
+          "noResults" -> locations.isEmpty
+        )
+      }
     }
   }
 
@@ -52,19 +54,21 @@ class ClearSkyServlet extends ClearSkyStack {
       forecast <- forecastRequest
     } yield (location, forecast)
 
-    requests map { data =>
-      val location = data._1
-      val forecast = data._2
+    new AsyncResult { val is =
+      requests map { data =>
+        val location = data._1
+        val forecast = data._2
 
-      mustache(
-        "location",
-        "name" -> location.name,
-        "container" -> location.container,
-        "temperature" -> forecast.temperature,
-        "weatherType" -> forecast.weatherType,
-        "windSpeed" -> forecast.windSpeed,
-        "windDirection" -> forecast.windDirection
-      )
+        mustache(
+          "location",
+          "name" -> location.name,
+          "container" -> location.container,
+          "temperature" -> forecast.temperature,
+          "weatherType" -> forecast.weatherType,
+          "windSpeed" -> forecast.windSpeed,
+          "windDirection" -> forecast.windDirection
+        )
+      }
     }
   }
 
@@ -82,11 +86,10 @@ class ClearSkyServlet extends ClearSkyStack {
 
   error {
     case e =>
+      status = 500
       mustache(
         "error",
         "error" -> e.getMessage
       )
   }
-
-  override protected implicit def executor: ExecutionContext = global
 }
