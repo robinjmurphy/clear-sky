@@ -8,7 +8,7 @@ import ScalateKeys._
 object ClearSkyBuild extends Build {
   val Organization = "uk.co.robinmurphy"
   val Name = "Clear Sky"
-  val Version = "0.1.0-SNAPSHOT"
+  val Version = "0.1.0"
   val ScalaVersion = "2.10.3"
   val ScalatraVersion = "2.2.2"
 
