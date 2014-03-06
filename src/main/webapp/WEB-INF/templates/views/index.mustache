@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>{{#hasResults}}Search results for '{{query}}' - {{/hasResults}}Clear Sky</title>
+</head>
+<body>
+    <div class="search">
+        {{>searchForm}}
+        {{#hasResults}}
+            <div class="search__results">
+                <ul>
+                    {{#results}}
+                    <li class="result">
+                        <a href="/locations/{{id}}">
+                            <span class="result__name">{{name}}</span>
+                            <span class="result__container">{{container}}</span>
+                        </a>
+                    </li>
+                    {{/results}}
+                </ul>
+            </div>
+        {{/hasResults}}
+        {{#noResults}}
+            <p class="search__no-results">No locations found for <strong>{{query}}</strong></p>
+        {{/noResults}}
+    </div>
+</body>
+</html>

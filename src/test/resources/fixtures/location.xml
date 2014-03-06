@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<location>
+    <id>2643743</id>
+    <name>London</name>
+    <container>Greater London</container>
+    <language>en</language>
+    <timezone>Europe/London</timezone>
+    <country>GB</country>
+    <latitude>51.50853</latitude>
+    <longitude>-0.12574</longitude>
+    <placeType>settlement</placeType>
+    <categories>
+        <category>
+            <name>zoom_level_8</name>
+            <data>
+                <alignment>5</alignment>
+            </data>
+        </category>
+        <category>
+            <name>zoom_level_10</name>
+            <data>
+                <alignment>5</alignment>
+            </data>
+        </category>
+        <category>
+            <name>zoom_level_5</name>
+            <data>
+                <alignment>5</alignment>
+            </data>
+        </category>
+        <category>
+            <name>zoom_level_7</name>
+            <data>
+                <alignment>5</alignment>
+            </data>
+        </category>
+        <category>
+            <name>zoom_level_6</name>
+            <data>
+                <alignment>5</alignment>
+            </data>
+        </category>
+        <category>
+            <name>zoom_level_4</name>
+            <data>
+                <alignment>5</alignment>
+            </data>
+        </category>
+        <category>
+            <name>zoom_level_9</name>
+            <data>
+                <alignment>5</alignment>
+            </data>
+        </category>
+    </categories>
+    <admin1 link="locations/6269131">
+        <name>England</name>
+        <id>6269131</id>
+    </admin1>
+</location>

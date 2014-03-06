@@ -1,0 +1,248 @@
+body {
+    background-color: #5dc1d3;
+    background: linear-gradient(135deg, #5dc1d3 0%, #7BCEB0 100%);
+    -webkit-text-size-adjust: 100%;
+}
+
+.clear-sky {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    margin: 0 auto;
+    max-width: 40em;
+    font-size: 0.875em;
+    padding: 1.5em;
+}
+
+@media only screen and (min-width: 40em) {
+    .clear-sky {
+        font-size: 1em;
+    }
+}
+
+/* -- S E A R C H -- */
+
+.search__input-container {
+    position: relative;
+}
+
+.search__submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 60px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    text-indent: -999em;
+    background: center center url('/images/search.svg') no-repeat;
+    background-size: 24px;
+    cursor: pointer;
+}
+
+.search__submit:focus,
+.search__submit:hover,
+.search__submit:active {
+    outline: 0;
+}
+
+.search__input {
+    background: transparent;
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 0;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+    display: block;
+    boz-sizing: border-box;
+    font-family: inherit;
+    font-size: 1.5em;
+    color: #404040;
+    padding: 12px 56px 12px 16px;
+    transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.search__input:focus {
+    outline: 0;
+    background-color: #fff;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0,.1);
+}
+
+.search__input::-webkit-input-placeholder {
+    transition: color 0.3s;
+    color: #666;
+}
+
+.search__input:focus::-webkit-input-placeholder {
+    color: #999;
+}
+
+.result a {
+    color: #fff;
+    padding: 16px;
+    display: block;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.2s;
+    font-size: 1.125em;
+    line-height: 1.2;
+}
+
+.result__name {
+   color: rgba(255, 255, 255, 1);
+   transition: color 0.1s;
+}
+
+.result__container {
+   color: rgba(255, 255, 255, 0.8);
+   transition: color 0.1s;
+}
+
+.result a:focus,
+.result a:hover,
+.result a:active {
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: 0;
+}
+
+.result a:focus .result__name,
+.result a:hover .result__name,
+.result a:active .result__name {
+    color: #fff;
+}
+
+.result a:focus .result__container,
+.result a:hover .result__container,
+.result a:active .result__container {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media only screen and (min-width: 40em) {
+    .search {
+        margin-top: 5em;
+    }
+}
+
+.search__no-results {
+    margin-top: 1em;
+    font-size: 1.25em;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* -- L O C A T I O N -- */
+
+.location__name {
+    font-size: 3em;
+    margin-bottom: 0.25em;
+}
+
+.location__container {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.location__header {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media only screen and (min-width: 40em) {
+    .location {
+        margin-top: 5em;
+    }
+}
+
+.c {
+    font-size: 0.875em;
+}
+
+.forecast {
+    margin-top: 16px;
+}
+
+.forecast__weather-type {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
+.forecast__temperature {
+    font-size: 4em;
+    margin-bottom: 8px;
+    letter-spacing: -2px;
+}
+
+.forecast__wind {
+    font-size: 1.25em;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.2;
+}
+
+@media only screen and (min-width: 30em) {
+    .forecast__temperature {
+        float: right;
+    }
+
+    .forecast {
+        font-size: 1em;
+    }
+
+    .forecast__weather-type {
+        padding-top: 4px;
+        margin-bottom: 8px;
+    }
+}
+
+/* -- E R R O R -- */
+
+.error__header {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.error__message {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    font-family: Menlo, Monaco, monospace;
+}
+
+@media only screen and (min-width: 40em) {
+    .error {
+        margin-top: 5em;
+    }
+}
+
+/* -- F O O T E R -- */
+
+.footer {
+    margin-top: 2em;
+}
+
+.footer__search-link {
+    box-sizing: border-box;
+    color: #fff;
+    padding: 12px;
+    display: block;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.footer__search-link:focus,
+.footer__search-link:hover,
+.footer__search-link:active {
+    color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (min-width: 40em) {
+    .footer__search-link {
+        width: 50%;
+    }
+}

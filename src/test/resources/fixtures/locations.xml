@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locator>
+    <results totalResults="5">
+        <location>
+            <id>6058560</id>
+            <name>London</name>
+            <container>Canada</container>
+            <language>en</language>
+        </location>
+        <location>
+            <id>2643743</id>
+            <name>London</name>
+            <container>Greater London</container>
+            <language>en</language>
+        </location>
+        <location>
+            <id>7535661</id>
+            <name>London Borough of Harrow</name>
+            <container>Greater London</container>
+            <language>en</language>
+        </location>
+        <location>
+            <id>2643738</id>
+            <name>London Colney</name>
+            <container>Hertfordshire</container>
+            <language>en</language>
+        </location>
+        <location>
+            <id>2643734</id>
+            <name>Londonderry County Borough</name>
+            <container>Londonderry</container>
+            <language>en</language>
+        </location>
+    </results>
+</locator>

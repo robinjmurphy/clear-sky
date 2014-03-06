@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>{{name}} - Clear Sky</title>
+</head>
+<body>
+    <div class="location">
+        <header class="location__header">
+            <h1 class="location__name">{{name}}</h1>
+            <p class="location__container">{{container}}</p>
+        </header>
+        <div class="forecast">
+            <p class="forecast__temperature">{{temperature}}°<span class="c">C</span></p>
+            <p class="forecast__weather-type">{{weatherType}}</p>
+            <p class="forecast__wind">{{windSpeed}}mph {{windDirection}}</p>
+        </div>
+        {{>footer}}
+    </div>
+</body>
+</html>
