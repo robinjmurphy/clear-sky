@@ -14,13 +14,7 @@ class ClearSkyServlet(system: ActorSystem) extends ClearSkyStack {
   get("/") {
     contentType = "text/html"
 
-    mustache(
-      "index",
-      "query" -> "",
-      "results" -> Nil,
-      "hasResults" -> false,
-      "noResults" -> false
-    )
+    mustache("index")
   }
 
   get("/search") {
@@ -32,7 +26,7 @@ class ClearSkyServlet(system: ActorSystem) extends ClearSkyStack {
     new AsyncResult { val is =
       locationsRequest map { locations =>
         mustache(
-          "index",
+          "search",
           "query" -> query,
           "results" -> locations,
           "hasResults" -> locations.nonEmpty,
