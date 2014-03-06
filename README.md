@@ -1,8 +1,8 @@
-# Clear Sky 
+# Clear Sky
 
 [![Build Status](https://magnum.travis-ci.com/robinjmurphy/clear-sky.png?token=WUF7xk1NvNeWv7U6PqBg&branch=master)](https://magnum.travis-ci.com/robinjmurphy/clear-sky)
 
-> It tells you the weather.
+It tells you the weather.
 
 A project to help me learn the [Scalatra](http://www.scalatra.org) framework.
 
