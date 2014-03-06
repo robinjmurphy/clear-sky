@@ -1,5 +1,7 @@
 # Clear Sky 
 
+[![Build Status](https://travis-ci.org/robinjmurphy/clear-sky.png?branch=master)](https://travis-ci.org/robinjmurphy/clear-sky)
+
 It tells you the weather.
 
 A project to help me learn the [Scalatra](http://www.scalatra.org) framework.
