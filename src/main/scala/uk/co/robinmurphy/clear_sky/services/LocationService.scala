@@ -15,14 +15,6 @@ class LocationService(fetcher: Fetcher) {
     this(HttpFetcher)
   }
 
-  private def locationFromXml(xml: Node): Location = {
-    val id = xml \ "id"
-    val name = xml \ "name"
-    val container = xml \ "container"
-
-    new Location(id.text, name.text, container.text)
-  }
-
   def findById(id: String): Future[Location] = {
     val url = locationUrl.replace("{id}", id)
     val xml = fetcher.getXml(url)
@@ -39,6 +31,14 @@ class LocationService(fetcher: Fetcher) {
     xml map { elem =>
       (elem \ "results" \ "location").map { location => locationFromXml(location) }.toList
     }
+  }
+
+  private def locationFromXml(xml: Node): Location = {
+    val id = xml \ "id"
+    val name = xml \ "name"
+    val container = xml \ "container"
+
+    new Location(id.text, name.text, container.text)
   }
 
 }
