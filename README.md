@@ -2,11 +2,13 @@
 
 [![Build Status](https://magnum.travis-ci.com/robinjmurphy/clear-sky.png?token=WUF7xk1NvNeWv7U6PqBg&branch=master)](https://magnum.travis-ci.com/robinjmurphy/clear-sky)
 
-It tells you the weather.
+> It tells you the weather.
 
-A project to help me learn the [Scalatra](http://www.scalatra.org) framework. A version of the application is running at http://clear-sky.robinmurphy.co.uk/.
+A project to help me learn the [Scalatra](http://www.scalatra.org) framework.
 
 ![Screenshot](screenshot.png)
+
+A version of the application is running at http://clear-sky.robinmurphy.co.uk/.
 
 ## Build & Run
 
