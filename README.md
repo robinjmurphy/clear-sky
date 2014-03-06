@@ -6,6 +6,8 @@ It tells you the weather.
 
 A project to help me learn the [Scalatra](http://www.scalatra.org) framework.
 
+![Screenshot][screenshot.png]
+
 ## Build & Run
 
 ```sh
