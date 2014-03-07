@@ -8,7 +8,7 @@ import uk.co.robinmurphy.clear_sky.util.{HttpFetcher, Fetcher}
 import java.net.URLEncoder
 
 class LocationService(fetcher: Fetcher) {
-  val searchUrl = "https://open.live.bbc.co.uk/locator/locations?s={query}&a=true&pt=settlement"
+  val searchUrl = "http://open.live.bbc.co.uk/locator/locations?s={query}&a=true&pt=settlement"
   val locationUrl = "http://open.live.bbc.co.uk/locator/locations/{id}"
 
   def this() {
