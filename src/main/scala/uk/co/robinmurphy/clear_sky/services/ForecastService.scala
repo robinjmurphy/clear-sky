@@ -4,7 +4,6 @@ import uk.co.robinmurphy.clear_sky.models.Forecast
 import scala.concurrent._
 import ExecutionContext.Implicits.global
 import uk.co.robinmurphy.clear_sky.util.{HttpFetcher, Fetcher}
-import java.net.URLEncoder
 
 class ForecastService(fetcher: Fetcher) {
   val forecastUrl = "http://open.live.bbc.co.uk/weather/feeds/en/{id}/3hourlyforecast.json"
