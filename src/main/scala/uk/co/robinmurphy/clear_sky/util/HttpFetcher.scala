@@ -11,28 +11,15 @@ import org.apache.commons.io.IOUtils
 
 object HttpFetcher extends Fetcher {
 
-  override def getXml(uri: String): Future[Elem] = {
-    val resource = url(uri)
+  override def getXml(uri: String): Future[Elem] = Http(url(uri) OK as.xml.Elem)
 
-    Http(resource OK as.xml.Elem)
-  }
-
-  override def getJson(uri: String): Future[Option[Any]] = {
-    val request = getGzipped(uri)
-
-    request map { body =>
-      JSON.parseFull(body)
-    }
-  }
+  override def getJson(uri: String): Future[Option[Any]] = getGzipped(uri) map JSON.parseFull
 
   private def getGzipped(uri: String): Future[String] = {
     val resource = url(uri)
 
-    Http(
-      resource.addHeader("Accept-Encoding", "gzip") OK as.Bytes) map { bytes =>
-      val gis = new GZIPInputStream(new ByteArrayInputStream(bytes))
-
-      IOUtils.toString(gis);
+    Http(resource.addHeader("Accept-Encoding", "gzip") OK as.Bytes) map { bytes =>
+      IOUtils.toString(new GZIPInputStream(new ByteArrayInputStream(bytes)))
     }
   }
 
